@@ -8,6 +8,7 @@ const Counter = () => {
   const deCrease = () => {
     setNumber((prevNumber) => prevNumber - 1);
   };
+
   return (
     <div>
       <h1>{number}</h1>
