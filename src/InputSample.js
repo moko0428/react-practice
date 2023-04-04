@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 
 const InputSample = () => {
   const [inputs, setInputs] = useState({
     name: "",
     nickName: "",
   });
+  const nameInput = useRef();
   const { name, nickName } = inputs; //비구조화 할당을 통해 값을 추출
 
   const onChange = (e) => {
@@ -19,10 +20,17 @@ const InputSample = () => {
       name: "",
       nickName: "",
     });
+    nameInput.current.focus();
   };
   return (
     <div>
-      <input placeholder="이름" onChange={onChange} value={name} name="name" />
+      <input
+        placeholder="이름"
+        onChange={onChange}
+        value={name}
+        name="name"
+        ref={nameInput}
+      />
       <input
         placeholder="닉네임"
         onChange={onChange}
