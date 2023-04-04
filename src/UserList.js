@@ -8,30 +8,12 @@ const User = ({ user }) => {
     </div>
   );
 };
-const UserList = () => {
-  const users = [
-    {
-      id: 1,
-      username: "lee",
-      email: "public@gmail.com",
-    },
-    {
-      id: 2,
-      username: "park",
-      email: "park@gmail.com",
-    },
-    {
-      id: 3,
-      username: "lim",
-      email: "lim@gmail.com",
-    },
-  ];
-
+const UserList = ({ users }) => {
   return (
     <>
       <div>
-        {users.map((user, index) => (
-          <User user={user} key={index} />
+        {users.map((user) => (
+          <User user={user} key={user.id} />
         ))}
       </div>
     </>
