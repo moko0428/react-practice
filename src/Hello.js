@@ -9,6 +9,6 @@ const Hello = ({ color, name, isSpecial }) => {
 };
 Hello.defaultProps = {
   name: "이름없음",
-  color: "black",
+  color: "green",
 };
 export default Hello;
