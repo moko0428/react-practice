@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import { useRecoilState } from "recoil";
+import { totalCountState } from "./lib/recoilState";
 
 const SmokeCounter = () => {
   const [count, setCount] = useState(0);
   const [day, setDay] = useState("");
-
+  const [totalCount, setTotalCount] = useRecoilState(totalCountState);
   const onIncreament = () => {
     setCount((prev) => (prev += 1));
     onDate();
